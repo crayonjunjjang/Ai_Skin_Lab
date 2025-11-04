@@ -1,0 +1,15 @@
+# Django 캐시 파일
+__pycache__/
+*.pyc
+
+# 데이터베이스 파일
+db.sqlite3
+
+# 사용자가 업로드한 미디어 파일
+/media/
+
+# 용량이 큰 모델 파일
+/model/keras.h5
+
+# 환경 변수 파일
+.env
