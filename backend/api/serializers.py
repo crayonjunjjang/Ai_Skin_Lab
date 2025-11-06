@@ -15,14 +15,19 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         return token
 
 class RegisterSerializer(serializers.ModelSerializer):
-    age = serializers.IntegerField()
-    gender = serializers.CharField()
-    skin_type = serializers.CharField()
+    age = serializers.IntegerField(write_only=True)
+    gender = serializers.CharField(write_only=True)
+    skin_type = serializers.CharField(write_only=True)
 
     class Meta:
         model = User
         fields = ('username', 'password', 'age', 'gender', 'skin_type')
         extra_kwargs = {'password': {'write_only': True}}
+
+    def validate_username(self, value):
+        if User.objects.filter(username=value).exists():
+            raise serializers.ValidationError("이미 사용중인 아이디입니다.")
+        return value
 
     def create(self, validated_data):
         age = validated_data.pop('age')
@@ -34,11 +39,12 @@ class RegisterSerializer(serializers.ModelSerializer):
             password=validated_data['password']
         )
         
-        # The profile is created by a signal, so we just update it.
-        user.profile.age = age
-        user.profile.gender = gender
-        user.profile.skin_type = skin_type
-        user.profile.save()
+        Profile.objects.create(
+            user=user,
+            age=age,
+            gender=gender,
+            skin_type=skin_type
+        )
 
         return user
 
