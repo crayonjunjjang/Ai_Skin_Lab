@@ -1,0 +1,59 @@
+upstream gunicorn_server {
+    server unix:/run/gunicorn/gunicorn.sock;
+}
+
+server {
+    server_name crayonjunjjang.shop www.crayonjunjjang.shop;
+
+    location / {   
+        root /home/ubuntu/Ai_Skin_Lab/frontend/build;
+        try_files $uri /index.html;
+    }
+
+    location /django-static/ {
+        alias /home/ubuntu/Ai_Skin_Lab/backend/staticfiles/;
+    }
+
+    location /media/ {
+	alias /home/ubuntu/Ai_Skin_Lab/backend/media/;
+    }
+		  
+    location /api {
+        proxy_pass http://gunicorn_server;  
+        proxy_set_header Host $host;
+	proxy_set_header X-Real-IP $remote_addr;
+	proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+	proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_read_timeout 300s;
+    }
+
+    listen 443 ssl; # managed by Certbot
+    client_max_body_size 20M;
+    ssl_certificate /etc/letsencrypt/live/crayonjunjjang.shop/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/crayonjunjjang.shop/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+
+}
+
+
+server {
+    if ($host = www.crayonjunjjang.shop) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    if ($host = crayonjunjjang.shop) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    listen 80;
+    server_name crayonjunjjang.shop www.crayonjunjjang.shop;
+    return 404; # managed by Certbot
+
+
+
+
+}
