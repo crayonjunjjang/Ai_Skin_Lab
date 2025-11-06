@@ -30,7 +30,7 @@ STATICFILES_DIRS = [
 SECRET_KEY = 'django-insecure-sj$&ly(fzt-2zkwz0-pbztdr8!dl2ywb)+_gvre=ah9c_#1d7^' # TODO: Load from environment variable in production
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 

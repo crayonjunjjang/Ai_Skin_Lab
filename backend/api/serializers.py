@@ -24,6 +24,11 @@ class RegisterSerializer(serializers.ModelSerializer):
         fields = ('username', 'password', 'age', 'gender', 'skin_type')
         extra_kwargs = {'password': {'write_only': True}}
 
+    def validate_username(self, value):
+        if User.objects.filter(username=value).exists():
+            raise serializers.ValidationError("이미 사용중인 아이디입니다.")
+        return value
+
     def create(self, validated_data):
         age = validated_data.pop('age')
         gender = validated_data.pop('gender')
@@ -34,11 +39,12 @@ class RegisterSerializer(serializers.ModelSerializer):
             password=validated_data['password']
         )
         
-        # The profile is created by a signal, so we just update it.
-        user.profile.age = age
-        user.profile.gender = gender
-        user.profile.skin_type = skin_type
-        user.profile.save()
+        Profile.objects.create(
+            user=user,
+            age=age,
+            gender=gender,
+            skin_type=skin_type
+        )
 
         return user
 
