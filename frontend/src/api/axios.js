@@ -2,7 +2,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 
 const instance = axios.create({
-  baseURL: 'http://localhost:8000/api' // Base URL for all API requests
+  baseURL: '/api' // Base URL for all API requests
 });
 
 // Add a request interceptor to include the auth token

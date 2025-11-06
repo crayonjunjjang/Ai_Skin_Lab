@@ -64,8 +64,8 @@ except Exception as e:
     labels = None
     print(f"Error loading model or labels: {e}")
 
-
 from .models import Diagnosis, Review
+
 
 SKINCARE_TIPS = {
     "여드름 피부": {

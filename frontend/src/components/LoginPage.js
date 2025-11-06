@@ -25,7 +25,7 @@ function LoginPage() {
       localStorage.setItem('is_staff', decodedToken.is_staff);
 
       if (decodedToken.is_staff) {
-        navigate('/admin');
+        navigate('/diagnosis');
       } else {
         navigate('/diagnosis');
       }
