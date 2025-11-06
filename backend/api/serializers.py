@@ -15,9 +15,9 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         return token
 
 class RegisterSerializer(serializers.ModelSerializer):
-    age = serializers.IntegerField()
-    gender = serializers.CharField()
-    skin_type = serializers.CharField()
+    age = serializers.IntegerField(write_only=True)
+    gender = serializers.CharField(write_only=True)
+    skin_type = serializers.CharField(write_only=True)
 
     class Meta:
         model = User
