@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import axios from '../api/axios';
 import { Form, Button, Card, Alert } from 'react-bootstrap';
 import { StarFill } from 'react-bootstrap-icons';
 
@@ -33,20 +33,7 @@ function ReviewForm({ onReviewSubmitted }) {
     }
 
     try {
-      const accessToken = localStorage.getItem('access_token');
-      if (!accessToken) {
-        setError('후기를 작성하려면 로그인이 필요합니다.');
-        return;
-      }
-
-      await axios.post('http://localhost:8000/api/reviews/create/', 
-        { rating, text }, 
-        {
-          headers: {
-            'Authorization': `Bearer ${accessToken}`,
-          },
-        }
-      );
+      await axios.post('/reviews/create/', { rating, text });
       
       setSuccess('소중한 후기 감사합니다!');
       setText('');
