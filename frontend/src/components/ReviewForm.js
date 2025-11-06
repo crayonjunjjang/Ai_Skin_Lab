@@ -70,7 +70,7 @@ function ReviewForm({ onReviewSubmitted }) {
         {error && <Alert variant="danger" className="mt-3">{error}</Alert>}
         {success && <Alert variant="success" className="mt-3">{success}</Alert>}
         <Form onSubmit={handleSubmit} className="mt-3">
-          <Form.Group className="mb-3" controlId="rating">
+          <Form.Group className="mb-3">
             <Form.Label>별점</Form.Label>
             <div>
               {[1, 2, 3, 4, 5].map((star) => (

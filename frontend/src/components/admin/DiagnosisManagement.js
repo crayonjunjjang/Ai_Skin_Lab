@@ -79,7 +79,9 @@ const DiagnosisManagement = () => {
               <td>{diagnosis.id}</td>
               <td>{diagnosis.user.username}</td>
               <td>
-                <Image src={diagnosis.image} thumbnail width="100" />
+		<a href={diagnosis.image} target="_blank" rel="noopener noreferrer">
+                  <Image src={diagnosis.image} thumbnail width="100" />
+		</a>
               </td>
               <td>
                 {diagnosis.result?.predictions?.[0] ? 

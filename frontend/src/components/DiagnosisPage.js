@@ -189,10 +189,10 @@ function DiagnosisPage() {
                 <>
                   <h5 className="mb-4">진단 결과</h5>
                   <Row>
-                    <Col md={6} className="mb-3 mb-md-0">
+                    <Col xs={12} md={6} className="mb-3 mb-md-0">
                       <Image src={previewImage} thumbnail fluid />
                     </Col>
-                    <Col md={6} className="text-start">
+                    <Col xs={12} md={6} className="text-start">
                       {diagnosisData.predictions.map((result, index) => (
                         <div key={index} className="mb-3">
                           <div className="d-flex justify-content-between">
