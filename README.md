@@ -593,34 +593,40 @@ ai-skin-diagnosis/
 
 ### 홈페이지
 메인 랜딩 페이지로 서비스 소개, 작동 방식, 사용자 리뷰를 확인할 수 있습니다.
-![alt text](image.png)
+<img width="1901" height="834" alt="image" src="https://github.com/user-attachments/assets/ca9e65fd-aa7e-45e7-8cba-792463c8494b" />
+
 ### 회원가입
 사용자 정보(아이디, 비밀번호)와 피부 정보(나이, 성별, 피부 타입)를 입력하여 가입합니다.
-![alt text](image-1.png)
+<img width="418" height="643" alt="image-1" src="https://github.com/user-attachments/assets/4873dc56-99b9-483b-be64-f19cb23a97a1" />
+
 ### AI 진단 페이지
 - 드래그 앤 드롭 또는 클릭으로 이미지 업로드
 - 예제 이미지로 빠른 테스트 가능
 - 실시간 AI 분석 및 결과 표시
 - 신뢰도 기반 다중 진단 결과
 - 피부 타입별 맞춤 스킨케어 솔루션 제공
-![alt text](image-2.png)
-![alt text](image-3.png)
+<img width="864" height="751" alt="image-2" src="https://github.com/user-attachments/assets/bf437a7a-021a-497b-ac64-dde24c1e75c4" />
+<img width="852" height="1006" alt="image-3" src="https://github.com/user-attachments/assets/5a2bce11-60f8-4b20-8182-2e472f1ad50c" />
+
 ### 진단 기록 (마이페이지)
 - 과거 진단 이력을 카드 형태로 표시
 - 날짜, 이미지, 진단 결과, 솔루션 확인
 - 페이지네이션으로 편리한 탐색
 - 기록 삭제 기능
-![alt text](image-4.png)
+<img width="1100" height="914" alt="image-4" src="https://github.com/user-attachments/assets/7ce6258b-3b03-4a77-8e59-8659d7a9b015" />
+
 ### 프로필 관리
 - 사용자 정보 수정
 - 피부 타입 변경
 - 비밀번호 변경
-![alt text](image-5.png)
+<img width="544" height="609" alt="image-5" src="https://github.com/user-attachments/assets/691b2ee6-382b-494a-ba8f-5eded106a429" />
+
 ### 관리자 대시보드
 - 사용자 관리 (조회, 수정, 삭제)
 - 진단 기록 모니터링
 - 리뷰 관리
-![alt text](image-6.png)
+<img width="308" height="148" alt="image-6" src="https://github.com/user-attachments/assets/8f8671bf-0495-4ec0-8840-c4fc475e8dfc" />
+
 
 ## 🌐 배포
 
