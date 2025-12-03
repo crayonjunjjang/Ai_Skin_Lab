@@ -597,6 +597,7 @@ ai-skin-diagnosis/
 
 ### 회원가입
 사용자 정보(아이디, 비밀번호)와 피부 정보(나이, 성별, 피부 타입)를 입력하여 가입합니다.
+
 <img width="418" height="643" alt="image-1" src="https://github.com/user-attachments/assets/4873dc56-99b9-483b-be64-f19cb23a97a1" />
 
 ### AI 진단 페이지
