@@ -8,6 +8,9 @@
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.0+-FF6F00.svg)](https://www.tensorflow.org/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
+<img width="864" height="751" alt="image-2" src="https://github.com/user-attachments/assets/bf437a7a-021a-497b-ac64-dde24c1e75c4" />
+<img width="852" height="1006" alt="image-3" src="https://github.com/user-attachments/assets/5a2bce11-60f8-4b20-8182-2e472f1ad50c" />
+
 ## 📋 목차
 
 - [프로젝트 소개](#-프로젝트-소개)
